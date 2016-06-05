@@ -1,3 +1,1 @@
-"producto",           "precio"
-"camisa",             "4,3"
-"libro de O\"Reilly", "7,2"
+2 * (3 + 4)

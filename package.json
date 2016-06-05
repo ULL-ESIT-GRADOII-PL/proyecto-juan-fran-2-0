@@ -1,8 +1,8 @@
 {
-  "name": "CSV",
+  "name": "PL0",
   "version": "1.0.0",
-  "description": "Comma separated values (CSV)",
-  "main": "public/js/csv.js",
+  "description": "Analizador PL0",
+  "main": "public/pl0.js",
   "scripts": {
     "test": "gulp tests",
     "chai": "curl https://raw.githubusercontent.com/chaijs/chai/master/chai.js -o testjs/chai.js",
@@ -10,18 +10,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alu0100502923/mongodb-mongoose-csv-juan-fran-2-0"
+    "url": "git+https://github.com/ULL-ESIT-GRADOII-PL/proyecto-juan-fran-2-0"
   },
   "keywords": [
     "csv"
   ],
-  "author": "Juan Oliva y Francisco Palacios",
+  "author": "Juan Oliva",
   "contributors": [],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alu0100502923/mongodb-mongoose-csv-juan-fran-2-0"
+    "url": "https://github.com/ULL-ESIT-GRADOII-PL/proyecto-juan-fran-2-0"
   },
-  "homepage": "https://github.com/ULL-ESIT-GRADOII-PL/mongodb-mongoose-csv-juan-fran-2-0",
+  "homepage": "https://github.com/ULL-ESIT-GRADOII-PL/proyecto-juan-fran-2-0",
   "dependencies": {
     "jquery": "*",
     "underscore": "*",

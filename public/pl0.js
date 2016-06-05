@@ -6,31 +6,18 @@ var aceditor;
 
 $(document).ready(() => {
         aceditor = ace.edit("original");
-        aceditor.setTheme("ace/theme/sqlserver");
+        aceditor.setTheme("ace/theme/twilight");
         aceditor.getSession().setMode("ace/mode/javascript");
         aceditor.setShowPrintMargin(false);
         aceditor.session.setUseWorker(false);
     })
 
-const resultTemplate = `
-<div class="contenido">
-      <table class="center" id="result">
-          <% _.each(rows, (row) => { %>
-          <tr class="<%=row.type%>">
-              <% _.each(row.items, (name) =>{ %>
-              <td><%= name %></td>
-              <% }); %>
-          </tr>
-          <% }); %>
-      </table>
-  </p>
-</div>
-`;
 
-/* Volcar la tabla con el resultado en el HTML */
-const fillTable = (data) => { 
-  $("#finaltable").html(_.template(resultTemplate, { rows: data.rows })); 
-};
+ /* Volcar la tabla con el resultado en el HTML */
+    const fillTable = (data) => {
+        $("#finaltable").get(0).className = "output";
+        $("#finaltable").html(JSON.stringify(data.tree, null, 3));
+    };
 
 /* Volcar en la textarea de entrada 
  * #original el contenido del fichero fileName */
@@ -85,7 +72,7 @@ $(document).ready(() => {
     /* Request AJAX para que se calcule la tabla */
     $("#parse").click(() => {
             if (window.localStorage) localStorage.original = aceditor.getValue();
-            $.get("/csv", /* Request AJAX para que se calcule la tabla */ {
+            $.get("/pl0", /* Request AJAX para que se calcule la tabla */ {
                     input: aceditor.getValue()
                 },
                 fillTable,
