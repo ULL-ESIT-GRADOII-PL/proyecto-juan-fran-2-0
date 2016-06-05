@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tests CSV</title>
+  <link rel="stylesheet" media="all" href="mocha.css">
+</head>
+
+<body>
+  <div id="mocha">
+    <p><a href="/">Página del Proyecto</a></p>
+  </div>
+  <div id="messages"></div>
+  <div id="fixtures"></div>
+  <script src="mocha.js"></script>
+  <script src="chai.js"></script>
+  <script src="blanket.js" data-cover-adapter="mocha-blanket.js" data-cover-flags="debug"></script>
+  <script src="calculate.js" data-cover></script>
+  <script>
+    mocha.setup('bdd')
+  </script>
+
+  <script type="text/javascript" src="csv_test.js"></script>
+  <script>
+    mocha.run();
+  </script>
+</body>
+
+</html>

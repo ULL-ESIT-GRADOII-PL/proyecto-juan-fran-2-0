@@ -1,0 +1,56 @@
+{
+  "name": "CSV",
+  "version": "1.0.0",
+  "description": "Comma separated values (CSV)",
+  "main": "public/js/csv.js",
+  "scripts": {
+    "test": "gulp tests",
+    "chai": "curl https://raw.githubusercontent.com/chaijs/chai/master/chai.js -o testjs/chai.js",
+    "mocha": "curl https://raw.githubusercontent.com/mochajs/mocha/master/mocha.js -o testjs/mocha.js && curl https://raw.githubusercontent.com/mochajs/mocha/master/mocha.css -o testjs/mocha.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alu0100502923/mongodb-mongoose-csv-juan-fran-2-0"
+  },
+  "keywords": [
+    "csv"
+  ],
+  "author": "Juan Oliva y Francisco Palacios",
+  "contributors": [],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alu0100502923/mongodb-mongoose-csv-juan-fran-2-0"
+  },
+  "homepage": "https://github.com/ULL-ESIT-GRADOII-PL/mongodb-mongoose-csv-juan-fran-2-0",
+  "dependencies": {
+    "jquery": "*",
+    "underscore": "*",
+    "express": "~3.2.6",
+    "ejs": "*",
+    "body-parser": "~1.12.0",
+    "express-ejs-layouts": "~1.1.0"
+  },
+  "engines": {
+    "node": ">=0.12 <=5"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.4",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-rename": "^1.2.2",
+    "gulp-shell": "^0.5.2",
+    "gulp-uglify": "^1.5.3",
+    "imagemin-jpegtran": "^4.3.2",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-mocha": "^0.2.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "mocha": "*",
+    "phantomjs-prebuilt": "^2.1.7"
+  }
+}
