@@ -1,176 +1,56 @@
-@import url(https://fonts.googleapis.com/css?family=Inconsolata|Raleway:400,700)
+body 
+  background-color: #008B8B
 
-body
-  //Se establece un gradiente de fondo y un color fijo para los navegadores que no lo soporten
-  background: #232526
-  background: -webkit-linear-gradient(right, #232526, #414345)
-  background: linear-gradient(to left, #232526, #414345)
-  //Se fija el color y la fuente por defecto de la página
+#title 
   color: white
-  font-family: Raleway, sans-serif
+  font-family: Arial
 
-header
-  //Se establece una imagen de fondo para la cabecera
-  background: url("../images/header.jpg") no-repeat center
-  //Se alinea el texto a la izquierda y se especifican las dimensiones de la cabecera
-  text-align: left
-  width: 100%
-  height: 85px
-  a
-    color: white
-    text-decoration: none
-    padding-right: 5%
-    &:hover
-      color: black
+#input 
+  color: white
 
-//Se establece el color y la separación de los enlaces del menú de la cabecera. También se elimina el subrayado
+#finaltable
+	border: 20px
+	padding: 10px
+	background-color: #A9A9A9
+	border-radius: 5px
+	margin: auto auto auto 30%
+	width: 600px
+  height: 200px
 
-//Al pasar el ratón por los enlaces de la cabecera cambiarán a color negro
+textarea 
+  font-family: Arial
+  border-radius: 5px
+  padding: 8px
 
-#menu
-  //El menú se separa ligeramente del borde la página
-  margin-left: 2%
-  > h1
-    display: inline-block
-
-//Se cambia el tipo de representación a inline-block para que ambos elementos se muestren adyacentes
-
-nav
-  display: inline-block
-
-//Añadido tamaño al menú de navegación para evitar errores con Firefox
-
-#menu > nav
-  width: 380px
-
-//Se elimina el estilo típico de una lista para que se muestre horizontalmente y sin puntos
-
-nav > ul
-  > li
-    list-style-type: none
-    display: inline
-  list-style-type: none
-  display: inline
-
-.separador
-  height: 50px
-
-.separadormini
-  height: 20px
-
-.pagina
-  width: 90%
-  margin: auto
+button 
+  border-radius: 5px
+  background-color: #e7e7e7
+  color: black
+  padding: 5px 10px
   text-align: center
-  a
-    color: white
-  textarea
-    color: rgb(103, 103, 103)
-  .hidden
-    display: none
-  button
-    color: black
-    background-color: rgb(221, 221, 221)
-    border: 1px solid black
-    padding: 5px 10px 5px 10px
-    &:active
-      background-color: rgb(159, 159, 159)
-  .inputfile
-    opacity: 0
-    overflow: hidden
-    position: absolute
-    padding: 5px 10px 5px 10px
-    width: 160px
-    height: 20px
-  .inputfile + label
-    color: black
-    background-color: rgb(221, 221, 221)
-    display: inline-block
-    cursor: pointer
-    padding: 5px 10px 5px 10px
-    border: 1px solid black
-    width: 160px
-    height: 20px
-    &:active
-      background-color: rgb(159, 159, 159)
-    &:hover
-      cursor: pointer
-  input
-    color: black
-  form
-    z-index: 99
-  #original
-    width: 600px
-    height: 250px
-    margin: auto
-    text-align: left
-  .output
-    text-align: left
-    width: 600px
-    height: 600px
-    font-family: Inconsolata, sans-serif
-    resize: none
-    
+  font-family: Arial
+  font-size: 16px
 
-table, th, td
-  border: 1px solid white
+button:hover 
+  background-color: black
+  color: #e7e7e7
 
-.prefooter
-  height: 143px
-//Se establece el tamaño del pie de página y el formato de su texto
+table.center 
+  padding: 10px 35px
+  font-family: Arial
+  font-weight: bold
+  color: black
+  text-align: center
+  margin: auto auto auto 25%
+  border-radius: 15px
+  background-color: #333B3D
 
-footer
-  width: 100%
+.error td 
+  background-color: red
+
+#original 
+  width: 600px
+  height: 200px
+  margin: auto
   text-align: left
-  text-indent: 2%
-  position: fixed
-  bottom: 0
-  left: 0
-  &:after
-    content : ""
-    display: block
-    position: absolute
-    top: 0
-    left: 0
-    background: url("../images/header.jpg") no-repeat bottom
-    width: 100%
-    height: 100%
-    opacity : 0.5
-    z-index: -1
-  ul
-    list-style-type: none
-    width: 200px
-  a
-    color: white
-    font-style: italic
-    &:hover
-      color: rgb(200, 205, 205)
-  #listamenu
-    float: left
-    display: inline-block
-  #listaderecha
-    float: right
-    display: inline-block
-    padding-right: 2%
 
-//Se eliminan los "puntos" de la lista
-
-@media screen and (max-width: 860px)
-  #menu h1
-    font-size: x-large
-  #original
-    width: 450px
-  #final
-    width: 450px
-
-@media screen and (max-width: 525px)
-  header li
-    font-size: small
-  #menu h1
-    font-size: large
-  #original
-    width: 250px
-  #final
-    width: 250px
-  footer
-    display: none

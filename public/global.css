@@ -15,13 +15,16 @@ body {
 	border-radius: 5px;
 	margin: auto auto auto 30%; 
 	width: 600px;
-  height: 200px;
+  height: 400px;
+  resize: none;
 }
+
 
 textarea {
   font-family: Arial;
   border-radius: 5px;
-  padding: 8px; }
+  padding: 8px; 
+  height: 600px;}
 
 button {
   border-radius: 5px;

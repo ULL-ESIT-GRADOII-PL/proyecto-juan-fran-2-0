@@ -1,1 +1,10 @@
-if false then a = 5
+# Ejemplo Suma
+
+function suma(int x,int y){
+  //comentario
+  if false then 
+     x = 0
+  else 
+     y = 1
+  //comentario
+}

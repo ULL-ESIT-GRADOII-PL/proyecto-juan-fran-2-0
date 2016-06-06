@@ -22,7 +22,7 @@
 
 program = block
 
-block = cD:constantDeclaration? vD:varDeclaration? fD:functionDeclaration* st:st 
+block = COMMENT* cD:constantDeclaration? COMMENT* vD:varDeclaration? COMMENT* fD:functionDeclaration* COMMENT* st:st* COMMENT*
           {
             let constants = cD? cD : [];
             let variables = vD? vD : [];
@@ -47,7 +47,7 @@ varDeclaration = VAR id:ID rest:(COMMA ID)* SC
                       return [id.value].concat(r) 
                     }
 
-functionDeclaration = FUNCTION id:ID LEFTPAR !COMMA p1:ID? r:(COMMA ID)* RIGHTPAR SC b:block SC
+functionDeclaration = FUNCTION id:ID LEFTPAR !COMMA tipo p1:ID? r:(COMMA tipo ID)* RIGHTPAR CL b:block CR
       {
         let params = p1? [p1] : [];
         params = params.concat(r.map(([_, p]) => p)); 
@@ -119,7 +119,18 @@ factor = NUMBER
        / ID
        / LEFTPAR t:assign RIGHTPAR   { return t; }
 
+tipo = INT / FLOAT / DOUBLE / CHAR / STRING / BOOLEAN
+
 _ = $[ \t\n\r]*
+
+COMMENT  = _ ["//""#"] $[ a-zA-Z0-9]* _  { return "COMENTARIO"; }
+
+INT      = _"int"_
+FLOAT	 = _"float"_
+DOUBLE 	 = _"double"_
+CHAR	 = _"char"_
+STRING	 = _"string"_
+BOOLEAN	 = _"boolean"_
 
 ASSIGN   = _ op:'=' _  { return op; }
 ADD      = _ op:[+-] _ { return op; }

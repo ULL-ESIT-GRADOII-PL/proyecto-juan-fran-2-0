@@ -1,3 +1,6 @@
-"edad",  "sueldo",  "peso"
-,         "6000€",  "90Kg"
-47,       "3000€",  "100Kg"
+//comentario
+if false then 
+a = 0
+else 
+a = 1
+//comentario
