@@ -101,6 +101,9 @@ assign = i:ID ASSIGN e:cond
 
 cond = l:exp op:COMP r:exp { return { type: op, left: l, right: r} }
      / exp
+     / string
+     
+string = QUOTE string:CADENA QUOTE SC { return { type: "STRING", value: string};}
 
 exp    = t:term   r:(ADD term)*   { return tree(t,r); }
 term   = f:factor r:(MUL factor)* { return tree(f,r); }
@@ -125,12 +128,15 @@ _ = $[ \t\n\r]*
 
 COMMENT  = _ ["//""#"] $[ a-zA-Z0-9]* _  { return "COMENTARIO"; }
 
-INT      = _"int"_
-FLOAT	 = _"float"_
-DOUBLE 	 = _"double"_
-CHAR	 = _"char"_
-STRING	 = _"string"_
-BOOLEAN	 = _"boolean"_
+CADENA	 	= _ str:([a-zA-Z0-9_ ]*) _ { return str.join(""); }
+QUOTE = _ '"' _ {return '"'; }
+
+INT      = _"int"_		{ return "int" }
+FLOAT	 = _"float"_	{ return "float" }
+DOUBLE 	 = _"double"_	{ return "double" }
+CHAR	 = _"char"_		{ return "char" }
+STRING	 = _"string"_	{ return "string" }
+BOOLEAN	 = _"boolean"_	{ return "boolean" }
 
 ASSIGN   = _ op:'=' _  { return op; }
 ADD      = _ op:[+-] _ { return op; }
